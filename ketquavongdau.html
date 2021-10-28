@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cầu thủ</title>
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="style.css">
+</head>
+</head>
+<style>
+:root {
+    --maincolor: black;
+    --navmenuheight: 35px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    background: #e2e2e2;
+    font-family: Roboto;
+}
+
+body {
+    width: 1182px;
+    background: white;
+    margin: 0 auto;
+    padding: 0 8px;
+}
+.banner {
+    height: 500px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("https://ontv.vtvcab.vn/wp-content/uploads/2021/10/Bang-xep-hang-Ngoai-hang-Anh-vong-9-1080x600.jpg?fbclid=IwAR13wvJrbDuxASdRkBcU2Q_hn3npH1XTGn1Q_ZtNBjo-fEaHxbJ-JhGXYXw");
+}
+
+#main-menu {
+    height: 52px;
+    background: var(--maincolor);
+}
+
+#main-menu > ul {
+    height: 100%;
+    list-style-type: none;
+}
+
+#main-menu > ul > li {
+    height: 100%;
+    float: left;
+    /* background:red; */
+    text-align: center;
+    line-height: 52px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 0.9rem;
+    padding: 0 50px;
+    color: white;
+    position: relative;
+    cursor: pointer;
+    /* border:1px solid yellow; */
+}
+
+#main-menu > ul > li > a {
+    color: white;
+    text-decoration: none;
+}
+
+#main-menu > ul > li:hover {
+    color: yellow;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#main-menu > ul > li:hover > a {
+    color: yellow;
+}
+
+#main-menu > ul > li > ul {
+    list-style-type: none;
+    width: 250px;
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    display: none;
+    background: var(--maincolor);
+}
+
+#main-menu > ul > li:hover > ul {
+    display: block;
+    padding: 8px 0;
+}
+
+#main-menu > ul > li > ul > li {
+    font-size: 0.9rem;
+    text-transform: none;
+    font-weight: normal;
+    height: 35px;
+    line-height: 35px;
+    /* border:1px solid red; */
+    background: var(--maincolor);
+    color: white;
+    text-align: center;
+    padding: 0 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: relative;
+}
+
+#main-menu > ul > li > ul > li::before {
+    content: "";
+}
+
+#main-menu > ul > li > ul > li:hover {
+    color: #da212133;
+    background: #c71928;
+    animation: slide 1s;
+}
+
+#main-menu > ul > li > ul > li:hover > a {
+    color: antiquewhite;
+}
+
+#main-menu > ul > li > ul > li > a {
+    color: white;
+    text-decoration: none;
+}
+
+
+#newsfeed {
+    height: 35px;
+    margin: 10px 0;
+    background: greenyellow;
+}
+
+#newsfeed .dts {
+    height: 100%;
+    width: 140px;
+    color: whitesmoke;
+    background: var(--maincolor);
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 35px;
+    font-size: 0.85rem;
+  
+    text-align: center;
+    float: left;
+}
+
+#newsfeed .arr {
+    width: 10px;
+    height: 10px;
+    border-top: 17.5px solid transparent;
+    border-bottom: 17.5px solid transparent;
+    border-left: 17.5px solid var(--maincolor);
+    background: #fbf29e;
+    float: left;
+}
+
+#newsfeed .dts a {
+    color: yellow;
+    text-decoration: none;
+}
+
+#newsfeed .running-text {
+    width: 1008px;
+    height: 100%;
+    background: #fbd69e;
+    float: left;
+    overflow: hidden;
+}
+
+#newsfeed .running-text > ul {
+    height: 100%;
+    list-style-type: none;
+    position: relative;
+    animation: runnings 100s infinite;
+    animation-timing-function: linear;
+    white-space: nowrap;
+    line-height: 35px;
+}
+
+#newsfeed .running-text > ul:hover {
+    animation-play-state: paused;
+}
+
+@keyframes runnings {
+    0% {
+        left: 100%;
+    }
+
+    100% {
+        left: -10000px;
+    }
+}
+
+#newsfeed .running-text > ul > li {
+    display: inline-block;
+    margin-left: 20px;
+    font-weight: bold;
+    color:  white ; 
+}
+
+#newsfeed .running-text > ul > li::before {
+    content: " ";
+    color: var(--maincolor);
+}
+
+#newsfeed .running-text > ul > li > a {
+    color: blue;
+}
+
+#row {
+    height: auto;
+    width: 100%;
+    display: flex;
+}
+
+#row .left_row {
+    height: 100%;
+    width: 670px;
+    /* background: pink; */
+    margin-right: 16px;
+    position: relative;
+}
+
+#row .left_row img {
+    height: 100%;
+    width: 100%;
+}
+
+#row .right_row > br {
+    height: 100%;
+    line-height: 46px;
+
+    border-radius: 5px 5px 0 0;
+    padding: 0 15px;
+    margin-right: 3px;
+    position: relative;
+}
+
+#banner .small-banner img {
+    width: 100%;
+    height: 100%;
+}
+
+.column {
+    float: left;
+    width: 30%;
+    padding: 15px;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    margin-left: 10px;
+}
+#price .hiu >h2
+{
+    color: black ;
+     margin-bottom: 10px; 
+     margin-top: 10px ; 
+     margin-left: 20px;
+     padding: 20px;
+     font-style: inherit  ; 
+    
+     text-decoration: navy;
+}
+#row .left_row{
+    margin-left: 10px ;
+    padding: 2px ;
+}
+#row .right_row >h1 {
+    color:  green ;
+    text-shadow: #e2e2e2;
+    text-shadow: #fbd69e 1px;
+    padding: 10pxs;
+    text-align: right ;
+}
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+#row .right-side {
+    color: black;
+    margin-left: 200px;
+    text-align: center;
+    margin-right: 10px;
+    float: left;
+}
+
+.title {
+    color: black;
+    margin-bottom: 50px;
+}
+
+.right_row .title-content {
+    margin-bottom: 10px;
+}
+
+.noidung {
+    margin-left: 80px;
+    color: rgb(175, 9, 9);
+    padding: 20px;
+}
+
+#noidungcon {
+    margin-left: 80px;
+    color: rgb(78, 77, 77);
+    margin-bottom: 20px;
+    margin-right: 50px;
+}
+
+#bottom {
+    width: 100%;
+    height: 0px;
+    background: red ;
+   margin-top: 60px;
+   margin-bottom: auto;
+   margin-left: auto ;
+   margin-right: 60px;
+    
+    align-items: center;
+}
+
+#bottom table, th, td {
+  border:1px solid  black;
+  width: auto;
+  height: auto;
+}
+#footer {
+    background-color: grey;
+    height: 150px;
+    margin-top: 50px;
+}
+
+#cottrai {
+    float: left;
+    color: white;
+    width: 33.33%;
+    margin-top: 40px;
+    margin-left: 30px;
+    height: fit-content;
+}
+
+#cotgiua {
+    float: left;
+    color: white;
+    width: 30%;
+    margin-top: 40px;
+    height: fit-content;
+}
+
+#cotphai {
+    float: left;
+    color: white;
+    width: 33.33%;
+    margin-top: 40px;
+    height: fit-content;
+}
+#price-1 .hiu {
+    color: black ; 
+     margin-bottom: 10px; 
+     margin-top: 30px ; 
+     margin-left: 20px;
+     padding: 20px;
+     font-style: border;
+     text-transform: uppercase; 
+}
+
+</style>
+<body>
+    <div class="banner"></div>
+    <div id="main-menu">
+        <ul>
+            <li>Giới thiệu
+                <ul>
+                    <li><a href="">Về chúng tôi</a></li>
+                    <li><a href="">Các đội bóng</a></li>
+
+                </ul>
+            <li>Đội bóng
+                <ul>
+                    <li><a href="">Lịch sử hình thành </a></li>
+                    <li><a href="">Sân nhà </a></li>
+                </ul>
+            </li>
+            <li>Giải đấu
+                <ul>
+                    <li><a href="">Trong nước</a></li>
+                    <li><a href="">Ngoài nước</a></li>
+
+                </ul>
+            </li>
+            <li>Cầu thủ của tháng</li>
+            <li>Huấn luyện viên của tháng </li>
+    </div>
+
+
+    <div id="newsfeed">
+        <div class="dts"> Kết quả vòng 9 </div>
+        <div class="arr"></div>
+        <div class="running-text">
+            <ul>
+                <li>Kết quả các trận đấu vòng 9 - giải ngoại hạng anh: </li>
+                <li>Newcastle 0 - 7 Chelsea</li>
+                <li>Tottenham 2 - 0 Man City   </li>
+                <li>Man United 5 - 3 West Brom</li>
+                <li>Liverpool 9 - 2 Leicester</li>
+                <li>Burnley 2 - 2 Crystal Palace</li>
+                <li>Fulham 4 - 3 Everton</li>
+                <li>Sheffield Utd 3 - 2 West Ham</li>
+            </ul>
+        </div>
+    </div>
+  
+    
+    <div id="bottom"> </div>
+
+    
+        <div class="hiu">
+            <h2>Kết quả vòng 10: </h2>
+        </div>        
+    </div>
+    <table class="table table-bordered" style="width:100%">
+        
+        <thead>
+          <tr>
+            <th scope="col">Só thứ tự</th>
+            <th scope="col">Chủ nhà</th>
+            <th scope="col">Đội khách</th>
+            <th scope="col">Tỉ số</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Chelsea</td>
+            <td>Man Unt</td>
+            <td>5 - 0</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Totteham</td>
+            <td>Leed Unt</td>
+            <td>3 - 0</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>Arsenal</td>
+            <td>Burley</td>
+            <td>2 - 0</td>
+          </tr>
+        </tbody>
+      </table>
+
+    
+  
+    <footer id="footer">
+        <div class="cot">
+            <div id="cottrai">
+                <BR>From Híu with love </br>
+                @ Được thực hiện bởi Híu 2 túi
+                </p>
+            </div>
+            <div id="cotgiua">
+                <li><a href="#" style="color: white ;">Các chính sách hỗ trợ</a></li>
+                <li><a href="#" style="color: white ;">Điều khoản dịch vụ</a></li>
+                <li> <a href="#" style="color: white ;">Đối tác</a></li>
+                <li> <a href="#" style="color: white ;">Trợ giúp</a></li>
+            </div>
+
+            <div id="cotphai">
+                Giữ liên lạc
+                <li><a href="#" style="color: white ;"> Twitter</a></li>
+                <li><a href="#" style="color: white ;">Facebook</a></li>
+                <li> Hotline: 0923.610.732</li>
+            </div>
+        </div>
+
+    </footer>
+
+</body>
+
+</html>
+</body>
+
+</html>
